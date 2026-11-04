@@ -1,6 +1,5 @@
 package Controladores;
 
-import apoio.Mensagem;
 import DAO.UsuarioDAO;
 import DAO.UsuarioDAOjdbc;
 import Model.Usuario;
@@ -14,7 +13,7 @@ public class ControlaUsuario {
         try {
             return usuarioDAO.autenticar(login, senha);
         } catch (SQLException ex) {
-            Mensagem.erro("Erro ao autenticar usuário.");
+            System.out.println("Erro ao autenticar usuário.");
             return null;
         }
     }
@@ -23,7 +22,7 @@ public class ControlaUsuario {
         try {
             usuarioDAO.salvar(nome, login, senha);
         } catch (SQLException ex) {
-            Mensagem.erro("Erro ao salvar usuário.");
+            System.out.println("Erro ao salvar usuário.");
         }
     }
 
