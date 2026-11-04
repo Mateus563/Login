@@ -40,4 +40,4 @@ CREATE TABLE usuario (id SERIAL PRIMARY KEY, nome VARCHAR(150) NOT NULL, login V
 
 Inserção de dados de LOGIN:
 INSERT INTO usuario (nome, login, senha_hash) VALUES
-('Administrador', 'admin', encode(sha256('admin'::bytea)
+('Administrador', 'admin', encode(sha256('admin'::bytea), 'hex'));
